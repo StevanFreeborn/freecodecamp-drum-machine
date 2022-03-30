@@ -1,18 +1,17 @@
 import React from 'react';
-import '../styles/App.css';
 
-class App extends React.Component {
+class PadBank extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     return (
-      <div id="drum-machine">
+      <div id="pad-bank">
         
       </div>
     );
   }
 }
 
-export default App;
+export default PadBank;
