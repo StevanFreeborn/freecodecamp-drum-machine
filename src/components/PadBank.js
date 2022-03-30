@@ -1,4 +1,5 @@
 import React from 'react';
+import DrumPad from './DrumPad';
 
 class PadBank extends React.Component {
   constructor(props) {
@@ -8,7 +9,8 @@ class PadBank extends React.Component {
   render() {
     return (
       <div id="pad-bank">
-        
+        <p>PadBank</p>
+        <DrumPad/>
       </div>
     );
   }

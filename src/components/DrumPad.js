@@ -8,10 +8,10 @@ class DrumPad extends React.Component {
   render() {
     return (
         <div id="" className="drum-pad">
-
+            <p>DrumPad</p>
         </div>
     );
   }
 }
 
-export default App;
+export default DrumPad;
