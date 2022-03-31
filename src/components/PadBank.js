@@ -7,10 +7,21 @@ class PadBank extends React.Component {
   }
 
   render() {
+
     return (
       <div id="pad-bank">
         <p>PadBank</p>
-        <DrumPad/>
+        {
+          this.props.sounds
+          .map(sound => 
+            <DrumPad 
+              id={sound.id}
+              keyId={sound.key} 
+              sound={sound.url}
+              updateDisplay={this.props.updateDisplay}
+            />
+          )
+        }
       </div>
     );
   }
