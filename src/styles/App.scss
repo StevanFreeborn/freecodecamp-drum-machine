@@ -1,0 +1,81 @@
+$primaryColor: #D82148;
+$secondaryColor: #151D3B;
+$accentColor: #6EBF8B;
+
+#drum-machine {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+#display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    padding: auto 0;
+    border: 5px solid $secondaryColor;
+    font-size: 48px;
+    background-color: $primaryColor;
+    color: $accentColor;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#pad-bank {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid $secondaryColor;
+    border-top: none;
+    padding: 10px 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.drum-pad {
+    font-size: 32px;
+    display: flex;
+    border-radius: 50%;
+    height: 110px;
+    width: 110px;
+    // background-color: $primaryColor;
+    border: 5px solid $secondaryColor;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    color: $accentColor;
+}
+
+.inactive {
+    background-color: $primaryColor;
+}
+
+.active {
+    background-color: $secondaryColor;
+}
+
+@media (hover:hover) {
+    .drum-pad {
+        cursor: pointer;
+    }
+}
+
+.footer {
+    margin-top: 10px;
+
+    h5 {
+        padding: 0px;
+        margin: 0px;
+        color: $accentColor
+    }
+    p {
+        padding: 0px;
+        margin: 0px;
+        color:$secondaryColor
+    }
+}
