@@ -51,6 +51,12 @@ $accentColor: #6EBF8B;
     color: $accentColor;
 }
 
+@media (hover:hover) {
+    .drum-pad {
+        cursor: pointer;
+    }
+}
+
 .footer {
     margin-top: 10px;
 
