@@ -3,13 +3,17 @@ import React from 'react';
 class DrumPad extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      status: "inactive"
+    };
     this.playSound = this.playSound.bind(this);
     this.keyPress = this.keyPress.bind(this);
+    this.activatePad = this.activatePad.bind(this);
   }
 
   keyPress(e) {
-    if(e.key.toLowerCase() === this.props.keyId.toLowerCase())
-      this.playSound();
+    if(e.key.toLowerCase() !== this.props.keyId.toLowerCase()) return;
+    this.playSound();
   }
   componentDidMount() {
     document.addEventListener("keydown", this.keyPress)
@@ -22,14 +26,24 @@ class DrumPad extends React.Component {
   playSound() {
     const sound = document.getElementById(this.props.keyId);
     sound.play();
+    this.activatePad();
+    setTimeout(() => this.activatePad(), 250);
     this.props.updateDisplay(this.props.keyId);
+  }
+
+  activatePad() {
+    if(this.state.status === "inactive")
+    {
+      return this.setState({status: "active"});
+    }
+    return this.setState({status: "inactive"});
   }
 
   render() {
     return (
         <div 
           id={this.props.id}
-          className="drum-pad"
+          className={`drum-pad ${this.state.status}`}
           onClick={this.playSound}
         >
             <audio 

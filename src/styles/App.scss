@@ -43,12 +43,20 @@ $accentColor: #6EBF8B;
     border-radius: 50%;
     height: 110px;
     width: 110px;
-    background-color: $primaryColor;
+    // background-color: $primaryColor;
     border: 5px solid $secondaryColor;
     align-items: center;
     justify-content: center;
     margin: 10px;
     color: $accentColor;
+}
+
+.inactive {
+    background-color: $primaryColor;
+}
+
+.active {
+    background-color: $secondaryColor;
 }
 
 @media (hover:hover) {

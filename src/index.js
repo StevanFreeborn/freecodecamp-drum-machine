@@ -3,12 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
+import * as ReactDOMClient from 'react-dom/client';
 
-ReactDOM.render(
+const root = ReactDOMClient.createRoot(
+  document.getElementById("root")
+);
+
+root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
 
 reportWebVitals();
