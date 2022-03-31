@@ -10,7 +10,6 @@ class PadBank extends React.Component {
 
     return (
       <div id="pad-bank">
-        <p>PadBank</p>
         {
           this.props.sounds
           .map(sound => 

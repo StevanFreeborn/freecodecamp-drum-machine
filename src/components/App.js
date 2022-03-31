@@ -1,15 +1,17 @@
 import React from 'react';
-import '../styles/App.css';
+import '../styles/App.scss';
 import Display from './Display';
 import PadBank from './PadBank';
 import { SOUNDS } from '../data/Sounds';
-import { keyboard, keyboardImplementationWrapper } from '@testing-library/user-event/dist/keyboard';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      display: "",
+      // set default display value to non-breaking space
+      // as place holder.
+      display: String.fromCharCode(160),
       sounds: SOUNDS
     };
     this.displayKey = this.displayKey.bind(this);
@@ -23,14 +25,22 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id="drum-machine">
-        <Display
-          text={this.state.display}
-        />
-        <PadBank
-          sounds={this.state.sounds}
-          updateDisplay={this.displayKey}
-        />
+      <div className="container-xxl">
+        <div className="row">
+          <div id="drum-machine" className="col-12">
+            <Display
+              text={this.state.display}
+            />
+            <PadBank
+              sounds={this.state.sounds}
+              updateDisplay={this.displayKey}
+            />
+            <div className="footer">
+              <h5>Code by Stevan</h5>
+              <p>Copyright &copy; 2021</p>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
