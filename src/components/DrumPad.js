@@ -4,9 +4,23 @@ class DrumPad extends React.Component {
   constructor(props) {
     super(props);
     this.playSound = this.playSound.bind(this);
+    this.keyPress = this.keyPress.bind(this);
   }
 
-  playSound(){
+  keyPress(e) {
+    
+    if(e.key.toLowerCase() === this.props.keyId.toLowerCase())
+      this.playSound();
+  }
+  componentDidMount() {
+    document.addEventListener("keydown", this.keyPress)
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.keyPress)
+  }
+
+  playSound() {
     const sound = document.getElementById(this.props.keyId);
     sound.play();
     this.props.updateDisplay(this.props.keyId);
