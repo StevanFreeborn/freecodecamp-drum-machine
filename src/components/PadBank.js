@@ -15,6 +15,7 @@ class PadBank extends React.Component {
           this.props.sounds
           .map(sound => 
             <DrumPad 
+              id={sound.id}
               keyId={sound.key} 
               sound={sound.url}
               updateDisplay={this.props.updateDisplay}
