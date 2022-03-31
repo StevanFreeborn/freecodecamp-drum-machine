@@ -8,7 +8,6 @@ class DrumPad extends React.Component {
   }
 
   keyPress(e) {
-    
     if(e.key.toLowerCase() === this.props.keyId.toLowerCase())
       this.playSound();
   }
